@@ -8,7 +8,7 @@ jobs:
         runs-on: ubuntu-latest
         strategy:
             matrix:
-                php-versions: [ '7.2' ]
+                php-versions: [ '7.2', '7.3', '7.4' ]
         steps:
             -   uses: actions/checkout@v2
 
@@ -17,12 +17,5 @@ jobs:
                 with:
                     php-version: ${{ matrix.php-versions }}
                     extensions: php_sockets, sodium, sockets
-
-            - run: composer install
-
-            -   uses: php-actions/phpunit@v2
-                with:
-                    php_version: ${{ matrix.php-versions }}
-                    bootstrap: vendor/autoload.php
-                    configuration: phpunit.xml.dist
-                    args: --coverage-text
+            -   run: composer install
+            -   run: bin/phpunit
