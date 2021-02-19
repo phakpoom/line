@@ -46,10 +46,15 @@ $bot->handleRequestWithBuilder($_SERVER['HTTP_X_LINE_SIGNATURE'], file_get_conte
 ```
 
 input "pet" -> "Cat or Dog"
+
 input "cat" -> "I love your cat."
 
-input "pet" -> "Cat or Dog"
-input "dog" -> "I love your dog."
 
 input "pet" -> "Cat or Dog"
+
+input "dog" -> "I love your dog."
+
+
+input "pet" -> "Cat or Dog"
+
 input "bird" -> "Something wrong! Please type cat or dog"
