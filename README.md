@@ -19,12 +19,12 @@ class SimpleBuilder extends AbstractBuilder {
 
   public static function getRegisterAcceptText(?string $name): string
   {
-      return "Hi, $name";
+      return '';
   }
 
   public static function getRegisterText(): string
   {
-      return 'register';
+      return '';
   }
 
   public static function getFallbackMessage()
