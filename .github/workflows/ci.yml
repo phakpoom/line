@@ -16,17 +16,17 @@ jobs:
                 uses: shivammathur/setup-php@v2
                 with:
                     php-version: ${{ matrix.php-versions }}
-                    extensions: php_sockets, sodium
+                    extensions: php_sockets, sodium, sockets
 
             -   name: Install dependencies
                 uses: php-actions/composer@v5
                 with:
-                    php-version: ${{ matrix.php-versions }}
+                    php_version: ${{ matrix.php-versions }}
                     dev: yes
 
             -   uses: php-actions/phpunit@v2
                 with:
-                    php-version: ${{ matrix.php-versions }}
+                    php_version: ${{ matrix.php-versions }}
                     bootstrap: vendor/autoload.php
                     configuration: phpunit.xml.dist
                     args: --coverage-text
