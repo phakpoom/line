@@ -9,7 +9,7 @@ use Bonn\Line\LineUserManagerInterface;
 use Bonn\Line\MessageBuilder\AbstractBuilder;
 use Bonn\Line\Test\AbstractLineMessageBotTest;
 
-class MessageTest extends AbstractLineMessageBotTest
+class VerifyBuilderTest extends AbstractLineMessageBotTest
 {
     private $manager;
     protected function setUp()
@@ -54,7 +54,7 @@ class MessageTest extends AbstractLineMessageBotTest
         };
     }
 
-    public function testBasic()
+    public function testVerify()
     {
         // no register
         $this->assertThatBotReplyTextMessage('ดีจ้า', 'bon', null);
