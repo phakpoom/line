@@ -1,0 +1,24 @@
+name: 'Line messaging api'
+
+on: [ push, pull_request ]
+
+jobs:
+    run:
+        name: PHP ${{ matrix.php-versions }}
+        runs-on: ubuntu-latest
+        strategy:
+            matrix:
+                php-versions: [ '7.2', '7.3', '7.4' ]
+        steps:
+            -   uses: actions/checkout@v2
+
+            -   name: Install dependencies
+                uses: php-actions/composer@v5
+                with:
+                    dev: yes
+
+            -   uses: php-actions/phpunit@v2
+                with:
+                    bootstrap: vendor/autoload.php
+                    configuration: phpunit.xml.dist
+                    args: --coverage-text
