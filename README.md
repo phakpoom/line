@@ -1,4 +1,4 @@
-# line
+# Line bot
 Simple Line bot builder.
 
 ## How to use 
