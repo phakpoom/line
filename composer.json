@@ -15,15 +15,15 @@
     "require": {
         "php": ">=7.2",
         "linecorp/line-bot-sdk": "^4.5",
-        "psr/log": "^1.1",
-        "phpunit/phpunit": "^7.3"
+        "psr/log": "^1.1"
     },
     "require-dev": {
         "symfony/symfony": "^4.4 || ^5.3",
         "doctrine/doctrine-bundle": "^1.12 || ^2.0",
         "symfony/var-dumper": "^4.2",
         "symfony/orm-pack": "^2.1",
-        "sylius/resource-bundle": "^1.6"
+        "sylius/resource-bundle": "^1.6",
+        "phpunit/phpunit": "^7.3"
     },
     "scripts": {},
     "config": {
