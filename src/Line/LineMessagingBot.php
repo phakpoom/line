@@ -11,6 +11,7 @@ use Psr\Log\LoggerInterface;
 class LineMessagingBot
 {
     public static $lastReplyMessage = null;
+    public static $lastMessageEvent = null;
 
     /** @var LINEBot|null */
     private $bot;
@@ -37,10 +38,13 @@ class LineMessagingBot
     public function handleRequestWithBuilder(string $signature, string $requestBody, AbstractBuilder $builder): void
     {
         self::$lastReplyMessage = null;
+        self::$lastMessageEvent = null;
 
         /** @var LINEBot\Event\MessageEvent $messageEvent */
         $replyMessages = [];
         foreach ($this->bot->parseEventRequest($requestBody, $signature) as $messageEvent) {
+            self::$lastMessageEvent = $messageEvent;
+
             $lineUser = $this->lineUserManager->findUserFromLineIdentifier($messageEvent->getUserId(), $builder::getScope());
 
             // มีการ require verify ป่าว ?
