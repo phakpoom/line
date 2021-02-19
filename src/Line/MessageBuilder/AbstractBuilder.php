@@ -15,9 +15,15 @@ abstract class AbstractBuilder
     /** @var LineUserInterface */
     protected $lineUserContext;
 
-    abstract public static function getRegisterText(): string;
+    public static function getRegisterText(): string
+    {
+        return '';
+    }
 
-    abstract public static function getRegisterAcceptText(?string $name): string;
+    public static function getRegisterAcceptText(?string $name): string
+    {
+        return '';
+    }
 
     /**
      * @return string|null|MessageBuilder
@@ -83,8 +89,8 @@ abstract class AbstractBuilder
 
     private function parseReply($v): MessageBuilder
     {
-        if (is_string($v)) {
-            return new MessageBuilder\TextMessageBuilder($v);
+        if (\is_scalar($v)) {
+            return new MessageBuilder\TextMessageBuilder((string) $v);
         }
 
         return $v;
