@@ -63,4 +63,4 @@ input "foo" -> "bar"
 input "bar" -> "baz"
 input "xx" -> Random sticker
 
-Next [ActiveBot](https://github.com/phakpoom/line/doc/2-Active-Bot.md)
+Next [Active bot](https://github.com/phakpoom/line/doc/2-Active-Bot.md)

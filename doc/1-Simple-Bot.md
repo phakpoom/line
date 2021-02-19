@@ -58,4 +58,4 @@ input "10+10" -> "20"
 
 input "xx" -> "Fallback"
 
-Next [VerifyBot](https://github.com/phakpoom/line/doc/2-Verify-Bot.md)
+Next [Verify bot](https://github.com/phakpoom/line/doc/2-Verify-Bot.md)

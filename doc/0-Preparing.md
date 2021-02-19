@@ -3,4 +3,4 @@
 2. You have to implement `\Bonn\Line\LineUserManagerInterface` connect with your database.
 
 Ready ? 
-Next [Simplebot](https://github.com/phakpoom/line/doc/1-Simple-Bot.md)
+Next [Simple bot](https://github.com/phakpoom/line/doc/1-Simple-Bot.md)
