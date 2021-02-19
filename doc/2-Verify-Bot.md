@@ -60,7 +60,9 @@ foreach ($allUsers as $user) {
 #### After enable
 
 input "foo" -> "bar"
+
 input "bar" -> "baz"
+
 input "xx" -> Random sticker
 
 Next [Active bot](https://github.com/phakpoom/line/blob/master/doc/2-Active-Bot.md)
