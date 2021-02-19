@@ -1,16 +1,3 @@
-# Line bot
-Simple Line bot builder.
-
-## How to use 
-
-### Basic bot
-Create own bussiness logic by extends `AbstractBuilder`
-example:
-
-
-### Verify First bot
-
-#### You have to implement @see \Bonn\Line\LineUserManagerInterface connect with your database.
 ```php
 require dirname(__DIR__) . '/vendor/autoload.php';
 
@@ -58,7 +45,7 @@ input "foo" -> ""
 
 input "join" -> "Welcome to fight club, wait admin approve."
 
-#### set LineUser enable
+#### Enable LineUser
 ```php
 /** @var array|\Bonn\Bundle\LineBotBundle\Model\LineUserInterface[] $allUsers */
 $allUsers = $lineManager->findEnabledUserFromScope('verify');
@@ -75,3 +62,5 @@ foreach ($allUsers as $user) {
 input "foo" -> "bar"
 input "bar" -> "baz"
 input "xx" -> Random sticker
+
+Next [ActiveBot](https://github.com/phakpoom/line/doc/2-Active-Bot.md)
