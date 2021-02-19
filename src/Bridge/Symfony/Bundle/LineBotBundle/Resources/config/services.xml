@@ -12,7 +12,7 @@
         </service>
         <service id="bonn_line.logger" class="Bonn\Bridge\Symfony\Bundle\LineBotBundle\LineDumpLogger" public="true"/>
         <service id="bonn_line.manager" class="Bonn\Bridge\Symfony\Bundle\LineBotBundle\Manager\LineUserManager" public="true">
-            <argument id="doctrine.orm.entity_manager.abstract" type="service" />
+            <argument id="doctrine.orm.default_entity_manager" on-invalid="ignore" type="service" />
         </service>
     </services>
 </container>
