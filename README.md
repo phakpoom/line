@@ -3,34 +3,52 @@ Simple Line bot builder.
 
 ## How to use 
 
-1. create own bussiness logic by extends `AbstractBuilder`
+### Basic bot
+Create own bussiness logic by extends `AbstractBuilder`
 example:
 ```php
-class SimpleBuilder extends AbstractBuilder {
-  public function getTextTemplates(): \Generator
-  {
-      yield '1+1' => '2';
-  }
+class SimpleBuilder extends \Bonn\Line\MessageBuilder\AbstractBuilder
+{
+    /**
+     * Input And Reply
+     */
+    public function getTextTemplates(): \Generator
+    {
+        yield '1+1' => '2';
+        yield '' => '2';
+    }
 
-  public static function getScope(): string
-  {
-      return 'default';
-  }
+    /**
+     * Name of bot
+     */
+    public static function getScope(): string
+    {
+        return 'test';
+    }
 
-  public static function getRegisterAcceptText(?string $name): string
-  {
-      return '';
-  }
+    /**
+     * Fallback message
+     */
+    public static function getFallbackMessage()
+    {
+        return 'ไม่รู้จักคำของท่าน';
+    }
 
-  public static function getRegisterText(): string
-  {
-      return '';
-  }
+    /**
+     * Reply message if input is @see getRegisterText
+     */
+    public static function getRegisterAcceptText(?string $name): string
+    {
+        return '';
+    }
 
-  public static function getFallbackMessage()
-  {
-      return 'fallback';
-  }
+    /**
+     * If you want before use this line bot user have to verify before. return input
+     */
+    public static function getRegisterText(): string
+    {
+        return '';
+    }
 }
 
 // create bot
