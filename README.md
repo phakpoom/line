@@ -78,6 +78,7 @@ class VerifyBuilder extends \Bonn\Line\MessageBuilder\AbstractBuilder
     public function getTextTemplates(): \Generator
     {
         yield 'foo' => 'bar';
+        yield from $this->bar(); // For clean code if you have a lot of yield
     }
 
     public static function getScope(): string
@@ -98,6 +99,11 @@ class VerifyBuilder extends \Bonn\Line\MessageBuilder\AbstractBuilder
     public static function getRegisterText(): string
     {
         return 'join';
+    }
+    
+    private function bar(): \Generator
+    {
+        yield 'bar' => 'baz';
     }
 }
 
@@ -126,4 +132,5 @@ foreach ($allUsers as $user) {
 #### After enable
 
 input "foo" -> "bar"
+input "bar" -> "baz"
 input "xx" -> Random sticker
