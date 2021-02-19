@@ -1,0 +1,39 @@
+{
+    "name": "phakpoom/line",
+    "license": "proprietary",
+    "type": "project",
+    "autoload": {
+        "psr-4": {
+            "Bonn\\": "src"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Tests\\": "tests/"
+        }
+    },
+    "require": {
+        "php": ">=7.2",
+        "linecorp/line-bot-sdk": "^4.5",
+        "psr/log": "^1.1",
+        "phpunit/phpunit": "^7.3"
+    },
+    "require-dev": {
+        "symfony/symfony": "^4.4 || ^5.3",
+        "doctrine/doctrine-bundle": "^1.12 || ^2.0",
+        "symfony/var-dumper": "^4.2",
+        "symfony/orm-pack": "^2.1",
+        "sylius/resource-bundle": "^1.6"
+    },
+    "scripts": {},
+    "config": {
+        "sort-packages": false,
+        "bin-dir": "bin"
+    },
+    "extra": {
+        "symfony": {
+            "allow-contrib": false
+        },
+        "branch-alias": null
+    }
+}

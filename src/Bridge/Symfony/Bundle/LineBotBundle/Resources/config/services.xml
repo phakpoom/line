@@ -1,0 +1,18 @@
+<?xml version="1.0" ?>
+
+<container xmlns="http://symfony.com/schema/dic/services"
+           xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+           xsi:schemaLocation="http://symfony.com/schema/dic/services http://symfony.com/schema/dic/services/services-1.0.xsd">
+
+    <services>
+        <service id="bonn_line.controller" class="Bonn\Bridge\Symfony\Bundle\LineBotBundle\Controller\LineHookController">
+            <argument id="service_container" type="service"/>
+            <argument id="bonn_line.manager" type="service"/>
+            <tag name="controller.service_arguments"/>
+        </service>
+        <service id="bonn_line.logger" class="Bonn\Bridge\Symfony\Bundle\LineBotBundle\LineDumpLogger" public="true"/>
+        <service id="bonn_line.manager" class="Bonn\Bridge\Symfony\Bundle\LineBotBundle\Manager\LineUserManager" public="true">
+            <argument id="doctrine.orm.entity_manager.abstract" type="service" />
+        </service>
+    </services>
+</container>
