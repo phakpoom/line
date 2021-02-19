@@ -12,12 +12,16 @@ use Doctrine\Persistence\ObjectRepository;
 
 final class LineUserManager implements LineUserManagerInterface
 {
-    /** @var ObjectManager */
+    /** @var string */
+    private $lineUserClass;
+
+   /** @var ObjectManager */
     private $objectManager;
 
-    public function __construct(ObjectManager $objectManager)
+    public function __construct(ObjectManager $objectManager, ?string $lineUserClass = null)
     {
         $this->objectManager = $objectManager;
+        $this->lineUserClass = $lineUserClass ?: LineUser::class;
     }
 
     public function findUserFromLineIdentifier(string $lineIdentifier, string $scope): ?LineUserInterface
@@ -38,7 +42,7 @@ final class LineUserManager implements LineUserManagerInterface
 
     public function creteUserWithScope(string $lineIdentifier, string $scope, array $info = []): LineUserInterface
     {
-        $lineUser = new LineUser();
+        $lineUser = new $this->lineUserClass;
         $lineUser->setScope($scope);
         $lineUser->setInfo($info);
         $lineUser->setLineIdentifier($lineIdentifier);
@@ -60,6 +64,6 @@ final class LineUserManager implements LineUserManagerInterface
 
     private function getRepository(): ObjectRepository
     {
-        return $this->objectManager->getRepository(LineUser::class);
+        return $this->objectManager->getRepository($this->lineUserClass);
     }
 }
