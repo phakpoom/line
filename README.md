@@ -8,26 +8,13 @@ Simple Line bot builder.
 ```composer require phakpoom/line```
 
 ## How to use
-0. [Preparing](https://github.com/phakpoom/line/blob/master/doc/0-Preparing.md)
-1. [Simple bot](https://github.com/phakpoom/line/blob/master/doc/1-Simple-Bot.md)
-2. [Verify bot](https://github.com/phakpoom/line/blob/master/doc/1-Verify-Bot.md)
-3. [Active bot](https://github.com/phakpoom/line/blob/master/doc/1-Active-Bot.md)
+- [Preparing](https://github.com/phakpoom/line/blob/master/doc/0-Preparing.md)
+- [Simple bot](https://github.com/phakpoom/line/blob/master/doc/1-Simple-Bot.md)
+- [Verify bot](https://github.com/phakpoom/line/blob/master/doc/1-Verify-Bot.md)
+- [Active bot](https://github.com/phakpoom/line/blob/master/doc/1-Active-Bot.md)
 
+Enjoy 😊😊
+____
 
-## Use Symfony ?
-1. add bundles.php
-```php
-    Bonn\Bridge\Symfony\Bundle\LineBotBundle\BonnLineBotBundle::class => ['all' => true],
-```
-2. add route
-```yaml
-line_hook:
-    path: /line-hook
-    defaults:
-        _controller: bonn_line.controller::hookAction
-        builderClass: App\Line\YourBuilder
-        token: "_TOKEN_"
-        secret: "_SECRET_"
-```
-
-Enjoy..
+If you are a symfony lover.
+- [Symfony Lover](https://github.com/phakpoom/line/blob/master/doc/4-Symfony.md)

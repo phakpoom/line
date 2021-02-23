@@ -36,7 +36,7 @@ class VerifyBuilder extends \Bonn\Line\MessageBuilder\AbstractBuilder
 }
 
 // create bot
-$bot = new \Bonn\Line\LineMessagingBot('mCRhyrNYU7pz89imuWkMUJVe5Ug2/ufb9AK2gxiYHwKa/UqFPs+2Ctgr4yvSwmDWviM9VLz4gZq7daK4uQ9JtF6Y4rWQT67yW8Q40tJ/Sf7pNN7wtY7xlS6rYMNSWIrlAD8xK295zKBl7txynm+wuAdB04t89/1O/w1cDnyilFU=', '035af192ffd8d6a52cfff00a89f65652', new \Bonn\Line\InMemoryLineUserManager());
+$bot = new \Bonn\Line\LineMessagingBot('_TOKEN_', '_SECRET_', new \Bonn\Line\InMemoryLineUserManager());
 
 $bot->handleRequestWithBuilder($_SERVER['HTTP_X_LINE_SIGNATURE'], file_get_contents('php://input'), new VerifyBuilder());
 ```

@@ -47,8 +47,10 @@ class SimpleBuilder extends \Bonn\Line\MessageBuilder\AbstractBuilder
     }
 }
 
+// InMemoryLineUserManager is only mockup manager, manager should be own class for database/storage connect.
+$manager = new \Bonn\Line\InMemoryLineUserManager(); 
 // create bot
-$bot = new LineMessagingBot('_TOKEN_', '_SECRET_', new InMemoryLineUserManager());
+$bot = new LineMessagingBot('_TOKEN_', '_SECRET_', $manager);
 
 $bot->handleRequestWithBuilder($_SERVER['HTTP_X_LINE_SIGNATURE'], file_get_contents('php://input'), new SimpleBuilder());
 ```
