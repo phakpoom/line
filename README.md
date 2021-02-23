@@ -10,8 +10,8 @@ Simple Line bot builder.
 ## How to use
 - [Preparing](https://github.com/phakpoom/line/blob/master/doc/0-Preparing.md)
 - [Simple bot](https://github.com/phakpoom/line/blob/master/doc/1-Simple-Bot.md)
-- [Verify bot](https://github.com/phakpoom/line/blob/master/doc/1-Verify-Bot.md)
-- [Active bot](https://github.com/phakpoom/line/blob/master/doc/1-Active-Bot.md)
+- [Verify bot](https://github.com/phakpoom/line/blob/master/doc/2-Verify-Bot.md)
+- [Active bot](https://github.com/phakpoom/line/blob/master/doc/3-Active-Bot.md)
 
 Enjoy 😊😊
 ____
