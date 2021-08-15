@@ -35,6 +35,11 @@ class LineMessagingBot
         return $this->bot;
     }
 
+    public function getLineUserManager(): LineUserManagerInterface
+    {
+        return $this->lineUserManager;
+    }
+
     public function handleRequestWithBuilder(string $signature, string $requestBody, AbstractBuilder $builder): void
     {
         self::$lastReplyMessage = null;
