@@ -9,7 +9,7 @@ use Psr\Log\NullLogger;
 
 class LineDumpLogger extends NullLogger implements LoggerInterface
 {
-    public function critical($message, array $context = array())
+    public function critical($message, array $context = array()): void
     {
         if (\function_exists('dump')) {
             dump($message);
