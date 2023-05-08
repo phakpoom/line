@@ -34,6 +34,11 @@ abstract class AbstractBuilder
 
     abstract public function getTextTemplates(): \Generator;
 
+    public function getReplyTextMessageForAnonymously(string $text, MessageEvent $messageEvent): ?MessageBuilder
+    {
+        return null;
+    }
+
     public function getReplyTextMessage(string $text): ?MessageBuilder
     {
         foreach ($this->getTextTemplates() as $pattern => $result) {
@@ -62,7 +67,7 @@ abstract class AbstractBuilder
         return $this->parseReply(static::getFallbackMessage());
     }
 
-    public function buildMessage(LineUserInterface $lineUser, MessageEvent $messageEvent, array &$replyMessages): void
+    public function buildMessage(?LineUserInterface $lineUser, MessageEvent $messageEvent, array &$replyMessages): void
     {
         $this->lineUserContext = $lineUser;
 
@@ -74,7 +79,11 @@ abstract class AbstractBuilder
 
         if ($messageEvent instanceof MessageEvent\TextMessage) {
             /** @var $messageEvent MessageEvent\TextMessage */
-            $builtMessage = $this->getReplyTextMessage($messageEvent->getText());
+            if (null === $lineUser) {
+                $builtMessage = $this->getReplyTextMessageForAnonymously($messageEvent->getText(), $messageEvent);
+            }  else {
+                $builtMessage = $this->getReplyTextMessage($messageEvent->getText());
+            }
         }
 
         if (empty($builtMessage)) {
@@ -87,7 +96,7 @@ abstract class AbstractBuilder
         ];
     }
 
-    private function parseReply($v): MessageBuilder
+    protected function parseReply($v): MessageBuilder
     {
         if (\is_scalar($v)) {
             return new MessageBuilder\TextMessageBuilder((string) $v);

@@ -71,6 +71,8 @@ class LineMessagingBot
                 }
 
                 if (null === $lineUser || !$lineUser->isEnabled()) {
+                    $builder->buildMessage(null, $messageEvent, $replyMessages);
+
                     continue;
                 }
             }
@@ -91,7 +93,7 @@ class LineMessagingBot
                 continue;
             }
 
-            $this->logger->critical($response->getRawBody());
+            $this->logger?->critical($response->getRawBody());
         }
     }
 
