@@ -93,7 +93,7 @@ class LineMessagingBot
                 continue;
             }
 
-            $this->logger?->critical($response->getRawBody());
+            $this->logger && $this->logger->critical($response->getRawBody());
         }
     }
 
