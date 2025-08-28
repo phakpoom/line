@@ -15,7 +15,7 @@
     "require": {
         "php": ">=7.2 || >=8.0",
         "linecorp/line-bot-sdk": "^4.5",
-        "psr/log": "^1.1"
+        "psr/log": "^1.1 || ^2.0 || ^3.0"
     },
     "require-dev": {
         "symfony/symfony": "^4.4 || ^5.3",
